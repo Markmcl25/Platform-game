@@ -50,6 +50,7 @@ function movePlayer() {
 function checkCollisions() {
     isOnGround = false;
 
+    // Check vertical collisions first (falling and landing)
     for (let platform of platforms) {
         if (
             playerX + playerWidth > platform.x &&
@@ -61,6 +62,21 @@ function checkCollisions() {
             playerY = platform.y - playerHeight; // Place player on top of the platform
             isJumping = false; // Allow the player to jump again after landing
             break;
+        }
+    }
+
+    // Check horizontal collisions (left/right)
+    for (let platform of platforms) {
+        if (
+            playerX + playerWidth > platform.x &&
+            playerX < platform.x + platform.width &&
+            playerY + playerHeight > platform.y &&
+            playerY < platform.y + platform.height
+        ) {
+            // If moving right, stop the player from moving past the platform
+            if (rightPressed) playerX = platform.x - playerWidth;
+            // If moving left, stop the player from moving past the platform
+            if (leftPressed) playerX = platform.x + platform.width;
         }
     }
 }
