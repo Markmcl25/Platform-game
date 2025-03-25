@@ -1,0 +1,10 @@
+{
+  "appId": "eu.markmcloughlin.shnake",
+  "appName": "Shnake",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}
