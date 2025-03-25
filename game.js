@@ -15,7 +15,7 @@ resizeCanvas();
 
 // Game variables
 let playerX = 50, playerY = canvas.height - 150, playerWidth = 50, playerHeight = 50;
-let playerSpeed = 5, jumpSpeed = 10, gravity = 0.5, velocityY = 0;
+let playerSpeed = 5, jumpSpeed = 15, gravity = 0.5, velocityY = 0;
 let isJumping = false, isOnGround = false;
 
 // Platforms
